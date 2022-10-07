@@ -1,0 +1,22 @@
+.contacts{
+    display: grid;
+    grid: auto / repeat(2, 1fr);
+
+    text-transform: capitalize;
+}
+
+.contacts p:first-of-type{
+    grid-row: 1;
+    grid-column: 1;
+
+    border-right: var(--border-thin);
+}
+
+.contacts p:last-of-type{
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.contacts p{
+    padding: 0.5rem;
+}

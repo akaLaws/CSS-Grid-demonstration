@@ -1,0 +1,12 @@
+.hero-typography{
+    font-size: clamp(3rem, 5.5vw, 6rem);
+}
+
+.hero-typography span{
+    display: block;
+}
+
+.hero-typography span::first-line{
+    text-transform: lowercase;
+    font-style: italic;
+}

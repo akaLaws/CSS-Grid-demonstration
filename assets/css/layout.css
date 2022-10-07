@@ -4,30 +4,126 @@ body{
     align-items: center;
     justify-content: space-evenly;
     gap: 3rem;
+
+    text-align: center;
 }
 
 header{
-    width: 70%;
-
-    font-size: 4rem;
+    width: 50%;
 }
 
+/*
+    In regard to readability a case can be made for using area names and scaled fractions. 
+    However I deliberately use a more controlled layout as I want flexibility in the width of the modules on seperate columns.
+    In regard to scalable modular architecture the layout must be seperated from the modules, hence positioning the modules with the tempalate area name
+    within the module benefit will be obsolete as this won't seperate the modules. 
+
+*/
 main{
     display: grid;
     grid: auto / repeat(9, 1fr);
 
-    width: 80%;
-    padding: 1em;
+    width: 100%;
+    padding-top: 2em;
 
-    border-top: thick double var(--color-dark);
-    border-bottom: thick double var(--color-dark);
+    padding-bottom: 1em;
+
+    /* these should be in styling? */
+    border-top: thick double var(--color-base);
+    border-bottom: thick double var(--color-base);
+}
+
+/* 
+ 900 px and 80% is chosing in regard to what was most visually pleasing when scaling
+*/
+@media screen and (min-width: 900px) {
+    main{ width: 80%;}
 }
 
 section{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+}
+
+/*
+    Seperating the layout positions from the modules means that you inherently can put any module into any position in the HTML
+    This is what scalable and modular architecture is all about. The downside is the added complexity to the CSS. So it's often a question of
+    the tradeoff in the flexibility in adding, removing and reusing the modules. 
+
+    In this case to demonstrate the use of SMACSS I will seperate them. This will often be how frameworks in CSS are build as well.
+
+    naming them generically somewhat pains me but is neccesary and I will keep it as meaningful ass possible.
+
+*/
+
+.l-first-row__left{
+    grid-row: 1;
+    grid-column: 1/span 4;
+}
+.l-first-row__mid{
+    grid-row: 1;
+    grid-column: 5;
+}
+.l-first-row__right{
+    grid-row: 1;
+    grid-column: 6/span 4;
+}
+
+.l-second-row{
+    grid-row: 2;
+    grid-column: 1/span 9;
+}
+
+/* 
+    Notice I've taking the mobile first appoach in the layout, however the naming mimics the desktop layout.
+    How can we apporach this better?
+*/
+
+.l-third-row__left{
+    grid-row: 3;
+    grid-column: 1/span 9;
+}
+
+.l-third-row__mid, .l-graphic{
+    grid-row: 4;
+    grid-column: 1/span 9;
+}
+
+.l-third-row__right{
+    grid-row: 5;
+    grid-column: 1/span 9;
+}
+
+.l-fourth-row{
+    grid-row:6;
+    grid-column: 1/span 9;
+}
+
+@media screen and (min-width: 700px) {
+    .l-third-row__left{
+        grid-column: 1/span 2;
+    }
     
-    padding:0.5em;
-    text-align: center;
+    .l-third-row__mid{
+        grid-row: 3;
+        grid-column: 3/span 5;
+    }
+    
+    .l-third-row__right{
+        grid-row: 3;
+        grid-column: 8/span 2;
+    }
+    
+    .l-fourth-row{
+        grid-row:4;
+    }
+
+    .l-graphic{
+        grid-row: 1/span 4;
+        grid-column: 2/span 7;
+    }
 }

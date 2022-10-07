@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,700;1,300&family=Dancing+Script&display=swap');
+
 @import url('variables.css');
+@import url('hero-typography.css');
 @import url('base.css');
 @import url('layout.css');
 @import url('venue.css');
 @import url('time.css');
 @import url('subject.css');
+@import url('description.css');
+@import url('lists.css');
+@import url('details.css');
+@import url('contacts.css');
+@import url('graphic.css');
+

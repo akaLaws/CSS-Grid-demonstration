@@ -1,11 +1,13 @@
 :root{
-    --color-base: grey;
-    --color-accent: cadetblue;
-    --color-dark: black;
+    --color-base: black;
+    --color-accent: rgb(95, 158, 160);
     --color-light: white;
 
-    --font-base: verdana, sans-serif;
-    --font-accent: 'Times New Roman', Times, serif;
+    --gradient-dark: rgba(52, 107, 108, 0.474);
+    --gradient-light: rgba(155, 140, 105, 0.3);
+    
+    --font-base:'Cormorant', serif;
+    --font-accent: 'Dancing Script', cursive;
 
-    --border-thin: thin solid var(--color-dark);
+    --border-thin: thin solid var(--color-base);
 }

@@ -11,22 +11,109 @@
 
 </head>
 <body>
-    <header>
-        <h1>this is a hero text</h1>
+    <header class="hero-typography" aria-label="the hero catchphrase">
+        <p>It is time <span>to start dreaming again</span></p>
     </header>
 
     <main>
-        <section class="venue">
-            <p>det sted vi skal være</p>
+        <!-- 
+            My big concern here whas where the sectiosn was too small. My argument for keeping them as is, is that they layout wise
+            Looks like seperate sections and in regard to the readers only chrome readers like TalkBack treats it as a landmark witth a "region" as prase
+            Considering this I would provide an Aria-Label to the sections as they convey important information as time and place respectably.
+            
+            This also corresponds to how you would read the text as information on the event intuitively. 
+            However I would argue for the content to switch and the subject be at the first section for more intuitive reading in regard to placement of heading.
+            But this is still a layout and not a content assignment...
+        -->
+
+        <section class="venue l-first-row__left" aria-label="event location">
+            <p>at the usual hang in our classroom at Roskilde Tekniske skole</p>
         </section>
 
-        <section class="time">
+        <section class="time l-first-row__mid border__vertical" aria-label="event time frame">
             <p>8am - 2pm</p>
         </section>
 
-        <section class="subject">
-            <h2>GRIIIDS</h2>
+        <section class="subject l-first-row__right" aria-label="event name">
+            <h1>CSS pseudo <span>introduction</span></h1>
         </section>
+
+        <section class="description l-second-row border__horizontal" aria-label="event descriptions">
+            <p>Learning beyond the basics</p>
+        </section>
+
+        <!--
+            <h2> is seperated from the <ul> 
+            - thanks to Mathias for that observation of it making NO sense to hang around with the <li>'s!!
+        -->
+        <section class="lists l-third-row__left" aria-label="event plan">
+            <h2>Subjects we'll go through</h2>
+            <ul>
+                <li>Pseudo Class</li>
+                <li>Pseuodo Elements</li>
+                <li>Custom properties</li>
+                <li>Combinators</li>
+                <li>Font styling</li>
+                <li>Grids</li>
+                
+            </ul>
+        </section>
+
+        <div  class="graphic l-graphic"></div>
+
+        <section class="details l-third-row__mid border__vertical" aria-label="event date">
+            <h2>beyond module</h2>
+            <h3>starts <span>at</span> 8.10 <span>am</span></h3>
+
+            <!--
+                keeping the date within a <p> as it should be read as a whole sentence.
+                Utilizing the "empty" span for the styling only that isn't relevant for the contents message and will be ignored by readers
+            -->
+            <p class="details__date">
+                <span>monday</span>
+                <span>september</span>
+                <span>27</span>
+                <span>th</span>
+            </p>
+
+            <p>Looking forward to see you</p>
+
+        </section>
+
+        <!--
+            Link text should include what and where it opens such as "new page", "pdf", "powerpoint" etc. 
+            This again is a content and not layout isue. However the links should be spaced more out as to be accesable to facilitate
+            a deficiancy in fine motor skills as hand tremors as well as a more clear destinction of seperation for a visual and cognitive need. 
+        -->
+
+        <section class="lists l-third-row__right" aria-label="resources">
+            <h2>Links worth visiting</h2>
+            <ul>
+
+                <li><a href="https://daily-dev-tips.com/posts/css-pseudo-classes-links/">
+                    Link pseudo-states
+                </a></li>
+                <li><a href="https://daily-dev-tips.com/posts/css-pseudo-classes-forms/">
+                    Form pseudo-states
+                </a></li>
+                <li><a href="https://daily-dev-tips.com/posts/css-pseudo-classes-element-states/">
+                    Element state selectors
+                </a></li>
+                <li><a href="https://daily-dev-tips.com/posts/css-pseudo-classes-other-states/">
+                    Other pseudo-states
+                </a></li>
+                <li><a href="https://codepen.io/tomhodgins/pen/YJZyPr">
+                    nth-word & nth-letter with javascript
+                </a></li>
+                
+            </ul>
+        </section>
+
+        <footer class="contacts l-fourth-row border__horizontal" aria-label="contact information">
+            <p>Pulsen 8, 4000 Roskilde</p>
+            <p>Sarah-Elizabeth Laws - @codingLaws</p>
+        </footer>
+
     </main>
 
 </body>

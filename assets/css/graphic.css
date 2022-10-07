@@ -1,0 +1,20 @@
+.graphic{
+    z-index: -10;
+
+    background-color: cadetblue;
+}
+
+@media screen and (min-width: 700px) {
+    .graphic{
+        width: 80vh;
+        height: 80vh;
+
+        border-radius: 100%;
+
+        justify-self: center;
+        align-self: center;
+
+        overflow: hidden;
+    }
+    
+}
