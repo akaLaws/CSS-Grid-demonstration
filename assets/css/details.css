@@ -42,3 +42,9 @@
     text-transform: lowercase;
     font-family: var(--font-accent);
 }
+
+/*
+    So this is designed to illustrate how you can (over)use pseudoselectors but an interesting topic to discuss would be whether this is flexible enough?
+    Should the date maybe be a module in it self? and the curly text maybe be a reuse of the venue module with a new name?
+    Should the description/time part be a reuse of the subject module with a new name?
+*/

@@ -1,8 +1,15 @@
+/* This modules has it's own grid for it's content but should still be considered a seperate module and not a port of the general layout
+   because this module can be reused in any item position of the layout grid */
+   
 .contacts{
     display: grid;
     grid: auto / repeat(2, 1fr);
 
     text-transform: capitalize;
+}
+
+.contacts p{
+    padding: 0.5rem;
 }
 
 .contacts p:first-of-type{
@@ -17,6 +24,4 @@
     grid-column: 2;
 }
 
-.contacts p{
-    padding: 0.5rem;
-}
+

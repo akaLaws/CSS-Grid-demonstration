@@ -17,6 +17,10 @@ body{
     padding-bottom: 2em;
 }
 
+main{
+    border-top: thick double var(--color-base);
+    border-bottom: thick double var(--color-base);
+}
 
 a{
     color: var(--color-base);
